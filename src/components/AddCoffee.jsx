@@ -25,6 +25,11 @@ const AddCoffee = () => {
         .then(res=>res.json())
         .then(data =>{
             console.log(data);
+            // receive data from server 
+            if(data.insertedId){
+                alert('Data added successfully!');
+                form.reset();
+            }
         })
     }
     return (
