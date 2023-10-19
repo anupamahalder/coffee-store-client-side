@@ -14,6 +14,18 @@ const AddCoffee = () => {
         // create an object 
         const coffeeData = {name, supplier, category, chef, taste, details, photo};
         console.log(coffeeData);
+        // send data to server 
+        fetch('http://localhost:5050/coffee',{
+            method: 'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(coffeeData)
+        })
+        .then(res=>res.json())
+        .then(data =>{
+            console.log(data);
+        })
     }
     return (
         <div>
