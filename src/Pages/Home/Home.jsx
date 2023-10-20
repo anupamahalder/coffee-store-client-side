@@ -1,8 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
 import {AiFillHeart} from 'react-icons/ai';
+import { useState } from "react";
 const Home = () => {
-    const coffeeData = useLoaderData();
+    const loadedCoffee = useLoaderData();
+    // take coffee data into a state with initializing loadedcoffedata
+    const [coffeeData, setCoffeeData] = useState(loadedCoffee);
     return (
         <div className="max-w-[1300px] min-h-screen">
             <img className="h-[80vh] brightness-50 object-cover object-center w-full" src="https://images.unsplash.com/photo-1459755486867-b55449bb39ff?auto=format&fit=crop&q=80&w=1469&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
@@ -14,7 +17,7 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto p-4">
                 {
                     // loop through the coffeedata 
-                    coffeeData.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+                    coffeeData.map(coffee => <CoffeeCard key={coffee._id} coffeeData={coffeeData} setCoffeeData={setCoffeeData} coffee={coffee}></CoffeeCard>)
                 }
             </div>
         </div>

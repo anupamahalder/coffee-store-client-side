@@ -4,7 +4,7 @@ import {BsFillPencilFill} from 'react-icons/bs';
 import {RxCross1} from 'react-icons/rx';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
-const CoffeeCard = ({coffee}) => {
+const CoffeeCard = ({coffee, coffeeData, setCoffeeData}) => {
     // destructure 
     const {_id, name, supplier, category, availableQuantity, taste, details, photo} = coffee;
     const handleDeleteBtn = (id) =>{
@@ -33,6 +33,9 @@ const CoffeeCard = ({coffee}) => {
                             'Your file has been deleted.',
                             'success'
                         )
+                        // we remove the coffee data which has been deleted 
+                        const remaining = coffeeData.filter(coffee => coffee._id != id);
+                        setCoffeeData(remaining);
                     }
                 })
             }
@@ -70,5 +73,7 @@ const CoffeeCard = ({coffee}) => {
 // Adding prop types 
 CoffeeCard.propTypes ={
     coffee: PropTypes.object.isRequired,
+    coffeeData: PropTypes.object.isRequired,
+    setCoffeeData: PropTypes.func.isRequired,
 }
 export default CoffeeCard;
