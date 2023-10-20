@@ -21,8 +21,10 @@ const MyRoute = createBrowserRouter([
                 element: <AddCoffee></AddCoffee>
             },
             {
-                path: '/updatecoffee',
-                element: <UpdateCoffee></UpdateCoffee>
+                path: '/updatecoffee/:id',
+                element: <UpdateCoffee></UpdateCoffee>,
+                // destructure params to get id from the url hit
+                loader: ({params})=>fetch(`http://localhost:5050/coffee/${params.id}`)
             },
             {
                 path: '/login',

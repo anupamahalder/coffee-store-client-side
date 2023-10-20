@@ -3,6 +3,7 @@ import {IoEyeSharp} from 'react-icons/io5';
 import {BsFillPencilFill} from 'react-icons/bs';
 import {RxCross1} from 'react-icons/rx';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 const CoffeeCard = ({coffee}) => {
     // destructure 
     const {_id, name, supplier, category, availableQuantity, taste, details, photo} = coffee;
@@ -52,8 +53,10 @@ const CoffeeCard = ({coffee}) => {
                     <button 
                     className="btn bg-blue-600 text-white text-xl hover:bg-blue-800"><IoEyeSharp></IoEyeSharp></button>
                     {/* edit btn  */}
+                    <Link to={`/updatecoffee/${_id}`}>
                     <button 
                     className="btn bg-black text-xl hover:text-black text-white"><BsFillPencilFill></BsFillPencilFill></button>
+                    </Link>
                     {/* delete btn with passing id */}
                     <button onClick={()=>handleDeleteBtn(_id)}
                     className="btn text-red-700 text-xl hover:bg-red-700 hover:text-white"><RxCross1></RxCross1></button>
