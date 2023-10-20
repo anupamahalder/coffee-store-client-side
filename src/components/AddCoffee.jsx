@@ -41,14 +41,14 @@ const AddCoffee = () => {
     return (
         <div>
             <form onSubmit={handleAddCoffee}
-             className="bg-[#F4F3F0] w-[600px] mx-auto p-10">
+             className="bg-[#F4F3F0] w-[600px] mx-auto p-10 my-10">
                 <h1 className="text-2xl font-bold text-amber-900 py-2 uppercase text-center">Add a coffee</h1>
                 <div className=" flex gap-6 justify-center">
                 <div className="text-left text-gray-600">
                     <label htmlFor="name" className="text-left text-black">Name </label> <br />
-                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="name"  />
+                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="name" required />
                     <label htmlFor="supplier" className="text-left text-black">Supplier </label> <br />
-                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="supplier"  />
+                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="supplier" required />
                     <label htmlFor="category" className="text-left text-black">Category </label> <br />
                     <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="category"  />
                 </div>
@@ -56,7 +56,7 @@ const AddCoffee = () => {
                     <label htmlFor="chef" className="text-left text-black">Chef </label> <br />
                     <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="chef"  />
                     <label htmlFor="taste" className="text-left text-black">Taste </label> <br />
-                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="taste"  />
+                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="taste" required />
                     <label htmlFor="details" className="text-left text-black">Details </label> <br />
                     <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="details"  />
                 </div>
@@ -64,7 +64,7 @@ const AddCoffee = () => {
             <div className="text-left text-gray-600">
                 <label htmlFor="photo" className="text-left text-black">Photo </label> <br />
                 <input className="hover:outline rounded-sm w-[96%] py-1" type="text" name="photo" />
-                <button className="rounded-sm w-[96%] outline outline-black bg-amber-800 mt-4 py-2 font-semibold text-white" type="submit">Add Coffee</button>
+                <button className="rounded-sm w-[96%] hover:outline outline-black bg-amber-800 mt-4 py-2 font-semibold text-white" type="submit">Add Coffee</button>
             </div>
             </form>
         </div>
