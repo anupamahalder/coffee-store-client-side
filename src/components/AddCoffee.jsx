@@ -7,13 +7,13 @@ const AddCoffee = () => {
         const name = form.name.value;
         const supplier = form.supplier.value;
         const category = form.category.value;
-        const chef = form.chef.value;
+        const availableQuantity = form.availableQuantity.value;
         const taste = form.taste.value;
         const details = form.details.value;
         const photo = form.photo.value;
 
         // create an object 
-        const coffeeData = {name, supplier, category, chef, taste, details, photo};
+        const coffeeData = {name, supplier, category, availableQuantity, taste, details, photo};
         console.log(coffeeData);
         // send data to server 
         fetch('http://localhost:5050/coffee',{
@@ -53,8 +53,8 @@ const AddCoffee = () => {
                     <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="category"  />
                 </div>
                 <div className="text-left text-gray-600">
-                    <label htmlFor="chef" className="text-left text-black">Chef </label> <br />
-                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="chef"  />
+                    <label htmlFor="chef" className="text-left text-black">Available Quantity </label> <br />
+                    <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="availableQuantity"  />
                     <label htmlFor="taste" className="text-left text-black">Taste </label> <br />
                     <input className="hover:outline rounded-sm py-1 mb-2" type="text" name="taste" required />
                     <label htmlFor="details" className="text-left text-black">Details </label> <br />
