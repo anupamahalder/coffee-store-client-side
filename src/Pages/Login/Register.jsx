@@ -1,15 +1,32 @@
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
+    
+    const handleRegister = e=>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+    }
     return (
         <div>
+            
             <div className="hero h-[90vh] ">
                 <div className="hero-content flex-col">
                     <div className="text-center">
                     <h1 className="text-5xl font-bold text-[#59341A]">Login now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={handleRegister}
+                    className="card-body">
+                        <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Name</span>
+                        </label>
+                        <input type="email" name="name" placeholder="Your name" className="input input-bordered" required />
+                        </div>
                         <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
@@ -31,11 +48,11 @@ const Login = () => {
                         </div>
                     </form>
                     </div>
-                    <h1>Donot have account? <Link className="text-[#59341A] font-semibold" to='/register'>Register</Link></h1>
+                    <h1>Already have account? <Link className="text-[#59341A] font-semibold" to='/login'>Login</Link></h1>
                 </div>
                 </div>
         </div>
     );
 };
 
-export default Login;
+export default Register;

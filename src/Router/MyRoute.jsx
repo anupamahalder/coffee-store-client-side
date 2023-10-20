@@ -4,6 +4,7 @@ import UpdateCoffee from "../components/UpdateCoffee";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import Register from "../Pages/Login/Register";
 
 const MyRoute = createBrowserRouter([
     {
@@ -29,6 +30,10 @@ const MyRoute = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }
