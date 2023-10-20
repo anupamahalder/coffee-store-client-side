@@ -12,7 +12,9 @@ const MyRoute = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                // load data 
+                loader: ()=>fetch('http://localhost:5050/coffee')
             },
             {
                 path: '/addcoffee',
