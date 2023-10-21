@@ -16,7 +16,7 @@ const MyRoute = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 // load data 
-                loader: ()=>fetch('http://localhost:5050/coffee')
+                loader: ()=>fetch('https://coffee-store-server-side-4e2s3g6ma-anupama-halders-projects.vercel.app/coffee')
             },
             {
                 path: '/addcoffee',
@@ -26,7 +26,7 @@ const MyRoute = createBrowserRouter([
                 path: '/updatecoffee/:id',
                 element: <UpdateCoffee></UpdateCoffee>,
                 // destructure params to get id from the url hit
-                loader: ({params})=>fetch(`http://localhost:5050/coffee/${params.id}`)
+                loader: ({params})=>fetch(`https://coffee-store-server-side-4e2s3g6ma-anupama-halders-projects.vercel.app/coffee/${params.id}`)
             },
             {
                 path: '/login',
@@ -35,7 +35,7 @@ const MyRoute = createBrowserRouter([
             {
                 path: '/user',
                 element:<Users></Users>,
-                loader: ()=>fetch('http://localhost:5050/user')
+                loader: ()=>fetch('https://coffee-store-server-side-4e2s3g6ma-anupama-halders-projects.vercel.app/user')
             },
             {
                 path: '/register',
