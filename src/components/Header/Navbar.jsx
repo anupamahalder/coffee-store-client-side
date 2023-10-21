@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className=" flex gap-10 text-[#59341A] font-semibold text-xl ">
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/addcoffee'>Add Coffee</NavLink>
-                <NavLink to='/updatecoffee'>Update Coffee</NavLink>
+                <NavLink to='/user'>User Details</NavLink>
                 <NavLink to='/login'>Login</NavLink>
             </div>
         </div>

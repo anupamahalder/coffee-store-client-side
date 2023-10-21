@@ -23,6 +23,20 @@ const Register = () => {
                 icon: 'success',
                 confirmButtonText: 'Ok'
             }) 
+            const createdTime = res.user?.metadata?.creationTime;
+            const user = {name, email, password, createdTime};
+            // send user data to server
+            fetch('http://localhost:5050/user',{
+                method: 'POST',
+                headers:{
+                    'content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
             form.reset();  
             navigate('/');
         })

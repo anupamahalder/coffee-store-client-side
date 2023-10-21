@@ -5,6 +5,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Login/Register";
+import Users from "../components/Users/Users";
 
 const MyRoute = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ const MyRoute = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/user',
+                element:<Users></Users>,
+                loader: ()=>fetch('http://localhost:5050/user')
             },
             {
                 path: '/register',
