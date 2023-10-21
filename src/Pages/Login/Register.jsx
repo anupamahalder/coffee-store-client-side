@@ -1,7 +1,12 @@
-import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 const Register = () => {
-    
+    // access createUser from context 
+    const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+    // handle register 
     const handleRegister = e=>{
         e.preventDefault();
         const form = e.target;
@@ -9,6 +14,21 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password);
+        createUser(email, password)
+        .then(res => {
+            console.log(res.user);
+            Swal.fire({
+                title: 'success',
+                text: 'You have successfully created account',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            }) 
+            form.reset();  
+            navigate('/');
+        })
+        .catch(err => {
+            console.log(err.message);
+        })
     }
     return (
         <div>
@@ -16,7 +36,7 @@ const Register = () => {
             <div className="hero h-[90vh] ">
                 <div className="hero-content flex-col">
                     <div className="text-center">
-                    <h1 className="text-5xl font-bold text-[#59341A]">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-[#59341A]">Register now!</h1>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister}
@@ -25,7 +45,7 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="email" name="name" placeholder="Your name" className="input input-bordered" required />
+                        <input type="text" name="name" placeholder="Your name" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                         <label className="label">
@@ -38,13 +58,9 @@ const Register = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
                         </div>
                         <div className="form-control mt-6">
-                        <button className="btn bg-[#6c4021] hover:text-[#59341A] hover:bg-gray-300 text-white">Login</button>
-                        <button className="btn mt-4 text-[#59341A] hover:bg-gray-300 bg-[#f8c2ae]">Login With Google</button>
+                        <button className="btn bg-[#6c4021] hover:text-[#59341A] hover:bg-gray-300 text-white">Register</button>
                         </div>
                     </form>
                     </div>
