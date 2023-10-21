@@ -58,6 +58,7 @@ const Users = () => {
                     <th>Name</th>
                     <th>Email</th>
                     <th>Account Created At</th>
+                    <th>Last Logged At</th>
                     <th>Action</th>
                 </tr>
                 </thead>
@@ -70,6 +71,7 @@ const Users = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>{user.createdTime}</td>
+                        <td>{users.lastLoggedAt}</td>
                         <td>
                             {/* perform delete operation  */}
                             {/* steps: 1. make an delete api on server side  */}
