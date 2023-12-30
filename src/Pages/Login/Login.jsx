@@ -30,7 +30,7 @@ const Login = () => {
             // steps 1. request to update from client side 
             // 2. go to backend and take response 
             // 3. backend will create an api to update to database and send resposne to client
-            fetch('https://coffee-store-server-side-4e2s3g6ma-anupama-halders-projects.vercel.app/user',{
+            fetch('http://localhost:5000/user',{
                 method: 'PATCH',
                 headers:{
                     'content-Type':'application/json'

@@ -23,7 +23,7 @@ const Users = () => {
             // user is confirmed to delete 
             if (result.isConfirmed) {
                 // send id to server and server will send response and delete from browser 
-                fetch(`https://coffee-store-server-side-4e2s3g6ma-anupama-halders-projects.vercel.app/user/${id}`,{
+                fetch(`http://localhost:5000/user/${id}`,{
                     method: 'DELETE'
                 })
                 .then(res=> res.json())
