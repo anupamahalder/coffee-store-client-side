@@ -47,7 +47,7 @@ const Users = () => {
           })
     }
     return (
-        <div>
+        <div className="min-h-screen">
            <h1>Total Users: {totalUsers}</h1> 
            <div className="overflow-x-auto">
             <table className="table">

@@ -39,10 +39,10 @@ const AddCoffee = () => {
         })
     }
     return (
-        <div>
+        <div className='min-h-screen'>
             <form onSubmit={handleAddCoffee}
-             className="bg-[#F4F3F0] w-[600px] mx-auto p-10 my-10">
-                <h1 className="text-2xl font-bold text-amber-900 py-2 uppercase text-center">Add a coffee</h1>
+             className="bg-[#F4F3F0] w-[600px] mx-auto p-10 my-16">
+                <h1 className="text-2xl font-bold text-amber-900 py-3 uppercase text-center">Add a coffee</h1>
                 <div className=" flex gap-6 justify-center">
                 <div className="text-left text-gray-600">
                     <label htmlFor="name" className="text-left text-black">Name </label> <br />

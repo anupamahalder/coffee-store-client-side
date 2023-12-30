@@ -29,10 +29,6 @@ const MyRoute = createBrowserRouter([
                 loader: ({params})=>fetch(`http://localhost:5000/coffee/${params.id}`)
             },
             {
-                path: '/login',
-                element: <Login></Login>
-            },
-            {
                 path: '/user',
                 element:<Users></Users>,
                 loader: ()=>fetch('http://localhost:5000/user')
@@ -42,7 +38,11 @@ const MyRoute = createBrowserRouter([
                 element: <Register></Register>
             }
         ]
-    }
+    },
+    {
+        path: '/login',
+        element: <Login></Login>
+    },
 ])
 
 export default MyRoute;

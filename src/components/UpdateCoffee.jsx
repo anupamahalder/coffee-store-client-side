@@ -45,9 +45,9 @@ const UpdateCoffee = () => {
         })
     }
     return (
-        <div>
+        <div className="min-h-screen">
             <form onSubmit={handleUpdateCoffee}
-             className="bg-[#F4F3F0] w-[600px] mx-auto p-10 my-10">
+             className="bg-[#F4F3F0] w-[600px] mx-auto p-10 my-16">
                 <h1 className="text-2xl font-bold my-4 text-amber-900 py-2 text-center"><span className="uppercase ">Update coffee: </span>{name}</h1>
                 <div className=" flex gap-6 justify-center">
                 <div className="text-left text-gray-600">
